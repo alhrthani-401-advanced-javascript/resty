@@ -12,12 +12,17 @@ class App extends React.Component {
         this.state = {
             loading: false,
             count: 0,
-            results: {}
+            results: {},
+            method:""
         };
     }
 
     toggleLoading = () => {
         this.setState({loading: !this.state.loading})
+    }
+
+    setMethod=(method)=>{
+        this.setState({method});
     }
 
     updateHandler = (results) => {
@@ -27,8 +32,8 @@ class App extends React.Component {
     render() {
         return (
             <>
-                <Form msg="Get me Startwars people!!" toggleLoading={this.toggleLoading} handler={this.updateHandler}  />
-                <Method/>
+                <Form method={this.state.method} msg="Get me Startwars people!!" toggleLoading={this.toggleLoading} handler={this.updateHandler}  />
+                <Method method={this.setMethod}/>
                 <People loading={this.state.loading} people={this.state.results} />
             </>
         )

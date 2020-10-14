@@ -6,7 +6,8 @@ const People = (props) => {
 
     return (
         <div className={`loading-${props.loading}`} >
-            <ReactJson src={props.people} theme="Adventure Time" /> 
+            {props.people}
+            {/* <ReactJson src={props.people} theme="Adventure Time" />  */}
 
             
 
