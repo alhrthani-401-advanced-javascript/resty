@@ -2,29 +2,15 @@ import React from 'react';
 import ReactJson from 'react-json-view' 
 
 
-const People = (props) => {
+const Results = (props) => {
 
     return (
         <div className={`loading-${props.loading}`} >
-            {props.people}
-            {/* <ReactJson src={props.people} theme="Adventure Time" />  */}
-
-            
-
-            {/* <ul>
-  
-                {Object.keys(props.people).map((key, indx)=> {
-                    return (
-                        
-                        <li key={indx}>
-                            <a href={props.people[key]}>{key}</a>
-                        </li>
-                    );
-                })}
-            </ul> */}
+              
+              <ReactJson src={{ response: props.results }} theme='monokai' />
         </div>
     )
 
 }
 
-export default People;
+export default Results;
